@@ -19,7 +19,7 @@ class TelegramBotConfig(BaseModel):
 
     @property
     def webhook_url(self) -> str:
-        return f"https://{self.TG_WEBHOOK_PROXY_NGROK_DOMAIN}{self.webhook_path}"
+        return f"https://{self.webhook_proxy_ngrok_domain}{self.webhook_path}"
 
 
 class Config(BaseSettings):
