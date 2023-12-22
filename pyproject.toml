@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "stas-bot"
+version = "0.1.0"
+description = "Telegram bot powered by Stich (Sats)"
+authors = ["quantumwaffy <sashchystyh@yandex.ru>"] # Add yours
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.105.0"
+uvicorn = "^0.25.0"
+python-dotenv = "^1.0.0"
+aiogram = "^3.2.0"
+pydantic-settings = "^2.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.6.0"
+black = "^23.12.0"
+isort = "^5.13.2"
+flake8 = "^6.1.0"
+autoflake = "^2.2.1"
+pytest = "^7.4.3"
+pytest-mock = "^3.12.0"
+httpx = "^0.26.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.autoflake]
+recursive = true
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
+exclude = "^migrations/"
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+
