@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name:  Create .env File # TODO: change to vars and secrets from GitHub
+        run: |
+          touch .env
+      - name: Test Linting
+        run: make gha_ci_check_linting
+      - name: Run Tests
+        run: make gha_ci_test
